@@ -404,6 +404,7 @@ gchar *get_download_dir (struct tgl_state *TLS) {
   }
   if (g_strcmp0(purple_core_get_ui(), "BitlBee") == 0) {
   dir = g_strconcat ("/tmp",  G_DIR_SEPARATOR_S, "downloads", NULL);
+  g_mkdir_with_parents (dir, 0770);
   } else {
   dir = g_strconcat (TLS->base_path, G_DIR_SEPARATOR_S, "downloads", NULL);
   g_mkdir_with_parents (dir, 0700);
